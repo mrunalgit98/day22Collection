@@ -25,13 +25,10 @@ public class Main {
 
     private void viewperson() {
 
-        Scanner sc = new Scanner(System.in);
-        System.out.println("enter city to search in entry");
-        String city = sc.nextLine();
+        
         Collections.sort(list, (k1, k2) -> (k1.getCity().compareTo(k2.getCity())));
         for (AddressSystem search : list) {
-            System.out.println(" ");
-            System.out.println("Person name " + search.getFirstName() +" Phone no "  + search.getPhoneNumber() + " City " + search.getCity());
+            System.out.println("The person name is " + search.getFirstName()+" from " + search.getCity() + " city");
 
         }
 
