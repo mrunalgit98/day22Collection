@@ -2,8 +2,6 @@
 
 package com.addressbook;
 
-import java.util.Scanner;
-
 class AddressSystem{
     String firstname;
     String lastname;
@@ -20,12 +18,14 @@ class AddressSystem{
         this.phoneNumber=phoneNumber;
         this.zipcode=zipcode;
 
+
         System.out.println("Name of the contact is : "+this.firstname+" "+this.lastname);
         System.out.println("City is "+this.city);
         System.out.println("Phone number= "+this.phoneNumber);
         System.out.println("zipcode= "+this.zipcode);
 
     }
+
 
 
 

@@ -18,17 +18,19 @@ public class Main {
         AddressSystem c3= new AddressSystem(s3.nextLine(),s3.nextLine(),s3.nextLine(),s3.nextLong(),s2.nextInt());
 
         Scanner sc=new Scanner(System.in);
-        System.out.println("enter first name to check duplicate");
-        String name = sc.nextLine();
-        if(name.equalsIgnoreCase(c1.firstname)){
-            System.out.println("duplicate found");
-        }if(name.equalsIgnoreCase(c2.firstname)){
-            System.out.println("duplicate found");
-        }if(name.equalsIgnoreCase(c2.firstname)){
-            System.out.println("duplicate found");
+        System.out.println("enter city to search in entry");
+        String city = sc.nextLine();
+        if(city.equalsIgnoreCase(c1.city)){
+            System.out.println("city found");
+        }if(city.equalsIgnoreCase(c2.city)){
+            System.out.println("city found");
+        }if(city.equalsIgnoreCase(c3.city)){
+            System.out.println("city found");
         }else {
-            System.out.println("duplicate not found");
+            System.out.println("city not found");
         }
+
+
 
 
     }
