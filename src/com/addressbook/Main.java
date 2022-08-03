@@ -1,43 +1,54 @@
 package com.addressbook;
 
-import java.util.Scanner;
+import java.util.*;
 
 public class Main {
+  private static ArrayList<AddressSystem> list = new ArrayList<AddressSystem>();
 
-    public static void main(String[] args) {
+    public void AddContactsDetails() {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the First Name  ");
+        String firstName = sc.nextLine();
+        System.out.println("Enter the Last Name  ");
+        String lastName = sc.nextLine();
+        System.out.println("Enter the City ");
+        String city = sc.nextLine();
+        System.out.println("Enter the Zip Code ");
+        String zip = sc.nextLine();
+        System.out.println("Enter the Phone Number ");
+        String phoneNumber = sc.nextLine();
 
-        System.out.println("Welcome to address Book");
-        Scanner s1=new Scanner(System.in);
-        System.out.println("Enter your firstname,lastname,city,phone number,zipcode");
-        AddressSystem c1= new AddressSystem(s1.nextLine(),s1.nextLine(),s1.nextLine(),s1.nextLong(),s1.nextInt());
-        Scanner s2=new Scanner(System.in);
-        System.out.println("Please enter the details of second contact(firstname,lastname,city,phone number,zipcode)");
-        AddressSystem c2= new AddressSystem(s2.nextLine(),s2.nextLine(),s2.nextLine(),s2.nextLong(),s2.nextInt());
-        Scanner s3=new Scanner(System.in);
-        System.out.println("Please enter the details of third contact(firstname,lastname,city,phone number,zipcode)");
-        AddressSystem c3= new AddressSystem(s3.nextLine(),s3.nextLine(),s3.nextLine(),s3.nextLong(),s2.nextInt());
+        AddressSystem details = new AddressSystem(firstName, lastName,  city, zip, phoneNumber);
+        list.add(details);
+        details.display();
+    }
 
-        Scanner sc=new Scanner(System.in);
+    private void viewperson() {
+
+        Scanner sc = new Scanner(System.in);
         System.out.println("enter city to search in entry");
         String city = sc.nextLine();
-        if(city.equalsIgnoreCase(c1.city)){
-            System.out.println("city found");
-        }if(city.equalsIgnoreCase(c2.city)){
-            System.out.println("city found");
-        }if(city.equalsIgnoreCase(c3.city)){
-            System.out.println("city found");
-        }else {
-            System.out.println("city not found");
+        Collections.sort(list, (k1, k2) -> (k1.getCity().compareTo(k2.getCity())));
+        for (AddressSystem search : list) {
+            System.out.println(" ");
+            System.out.println("Person name " + search.getFirstName() +" Phone no "  + search.getPhoneNumber() + " City " + search.getCity());
+
         }
-
-
 
 
     }
 
+    public static void main(String[] args) {
+
+        Main book1=new Main();
+
+        System.out.println("Welcome to address Book");
+
+        book1.AddContactsDetails();
+        book1.viewperson();
 
 
-
+        }
 
 
 }
